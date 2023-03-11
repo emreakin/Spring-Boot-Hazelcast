@@ -30,7 +30,7 @@ public class HazelcastTokenService implements InitializingBean {
         if(maps != null) {
             HazelcastMapModel mapConfig = maps.stream().filter(map -> map.getKey().equals(TOKEN_KEY)).toList().get(0);
             tokenMap = hazelcastInstance.getMap(mapConfig.getName());
-            hazelcastInstance.getConfig().addMapConfig(new MapConfig(mapConfig.getName()).setTimeToLiveSeconds(mapConfig.getTtl())); // adding ttl to config from properties as minutes
+            hazelcastInstance.getConfig().addMapConfig(new MapConfig(mapConfig.getName()).setTimeToLiveSeconds(mapConfig.getTtl())); // adding ttl to config from properties as seconds
         }
     }
 
