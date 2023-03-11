@@ -1,0 +1,16 @@
+
+spring:
+  application:
+    name: SpringBoot-Hazelcast
+
+server:
+  port: 8080
+
+hazelcast:
+  cluster:
+    name: spring-boot-hazelcast-cluster-emreakin
+  maps:
+    -
+      key: token
+      name: tokenMap
+      ttl: 300
